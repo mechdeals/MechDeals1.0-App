@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   TextInput,
+  Image,
 } from 'react-native';
 
 //Modules imports
@@ -21,7 +22,17 @@ class GettingStarted extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.redbox}></View>
+        <View style={styles.redbox}>
+          <Image
+            resizeMode={'cover'}
+            style={{
+              alignSelf: 'center',
+              height: '100%',
+              width: '100%',
+            }}
+            source={require('../../../assets/Header.png')}
+          />
+        </View>
         <View>
           <Text style={styles.gettingStartedText}>Get Started</Text>
         </View>
@@ -32,7 +43,8 @@ class GettingStarted extends Component {
         <TextInput
           style={styles.textInput}
           placeholder="Type your mobile number"
-          placeholderTextColor="#211C1E">
+          placeholderTextColor="#211C1E"
+          keyboardType={'phone-pad'}>
           <Label style={styles.mobileNumberLabel}> +91 | </Label>
         </TextInput>
 
@@ -119,8 +131,10 @@ const styles = StyleSheet.create({
     color: '#211C1E',
   },
   redbox: {
-    width: 100,
+    width: '100%',
     height: '35%',
+    alignItems: 'center',
+    marginBottom: 30,
   },
 });
 
